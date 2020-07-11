@@ -1,7 +1,6 @@
 const logger = require('winston').loggers.get('default')
 const router = require('express').Router()
 const code = require('../code')
-const jwt = require('../middleware/jwt')
 
 const users = []
 
