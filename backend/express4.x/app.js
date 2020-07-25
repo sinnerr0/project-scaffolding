@@ -10,8 +10,8 @@ const compression = require('compression')
 app.use(
   slowDown({
     windowMs: 1 * 60 * 1000, // 1 minute
-    delayAfter: 100, // allow 100 requests per 1 minute, then...
-    delayMs: 100, // begin adding 100ms of delay per request above 100:
+    delayAfter: 100, // allow 500 requests per 1 minute, then...
+    delayMs: 100, // begin adding 100ms of delay per request above 500:
   })
 )
 app.use(helmet())

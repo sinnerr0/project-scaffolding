@@ -1,11 +1,13 @@
+class AppError extends Error {
+  constructor(code, message) {
+    super(message)
+    this.name = code
+  }
+}
+
 module.exports = {
+  createError: function createError(code, message) {
+    return new AppError(code, message)
+  },
   OK: 'OK',
-  ERROR: {
-    JWT_001: 'JWT_001',
-    USERS_001: 'USERS_001',
-  },
-  MESSAGE: {
-    JWT_001: 'user role is invalid.',
-    USERS_001: 'user id is not exist.',
-  },
 }
