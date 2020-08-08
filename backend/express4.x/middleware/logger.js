@@ -86,6 +86,7 @@ module.exports = (app) => {
             : ''
           httpRequest.query = req.query
           httpRequest.body = req.body
+          httpRequest.user = req.user && req.user.email
           meta.req = httpRequest
         }
 

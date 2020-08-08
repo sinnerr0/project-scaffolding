@@ -1,33 +1,32 @@
 const express = require('express')
 const app = express()
 const http = require('http')
-const slowDown = require('express-slow-down')
-const helmet = require('helmet')
-const cookieParser = require('cookie-parser')
-const compression = require('compression')
 
 // set middleware
 app.use(
-  slowDown({
+  require('express-slow-down')({
     windowMs: 1 * 60 * 1000, // 1 minute
     delayAfter: 100, // allow 500 requests per 1 minute, then...
     delayMs: 100, // begin adding 100ms of delay per request above 500:
   })
 )
-app.use(helmet())
-app.use(compression())
-app.use(cookieParser())
+app.use(require('helmet')())
+app.use(require('compression')())
+app.use(require('cookie-parser')())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-// register logger(default, express) middleware
+// logger(default, express) middleware
 require('./middleware/logger')(app)
+// jwt middleware
+require('./middleware/jwt')(app)
+// db midddleware
+require('./middleware/db')(app)
 
 // register routes
 app.use('/api', require('./routes'))
 
 // server start
-const winston = require('winston')
-const logger = winston.loggers.get('default')
+const logger = require('winston').loggers.get('default')
 const server = http
   .createServer(app)
   .listen(process.env.PORT || 3000)

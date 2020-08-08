@@ -1,0 +1,58 @@
+### health check
+GET http://localhost:3000/api/health
+
+### register
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "ks.choi",
+  "email": "ks.choi@alcherainc.com",
+  "password": "ks.choi"
+}
+
+### login
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "ks.choi@alcherainc.com",
+  "password": "ks.choi"
+}
+
+### get contracts
+GET http://localhost:3000/api/contact
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtzLmNob2lAYWxjaGVyYWluYy5jb20iLCJ1c2VybmFtZSI6ImtzLmNob2kiLCJfaWQiOiI1ZjJkNzYxMWQ5NWQ5ZDI5YzRlNmM2MWIiLCJpYXQiOjE1OTY4NDgzOTV9.LMXIJIHRLbBBxumuYT8xuwzNuYRcv0X_GcdnvosAP7w
+Content-Type: application/json
+
+### add contract
+POST http://localhost:3000/api/contact
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtzLmNob2lAYWxjaGVyYWluYy5jb20iLCJ1c2VybmFtZSI6ImtzLmNob2kiLCJfaWQiOiI1ZjJkNzYxMWQ5NWQ5ZDI5YzRlNmM2MWIiLCJpYXQiOjE1OTY4NDgzOTV9.LMXIJIHRLbBBxumuYT8xuwzNuYRcv0X_GcdnvosAP7w
+Content-Type: application/json
+
+{
+  "firstName":"1",
+  "lastName":"test",
+  "email":"test@gmail.com",
+  "company":"test",
+  "phone":"01012341234"
+}
+
+### get contracts
+GET http://localhost:3000/api/contact/5f2dfd66531f5806f88be396
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtzLmNob2lAYWxjaGVyYWluYy5jb20iLCJ1c2VybmFtZSI6ImtzLmNob2kiLCJfaWQiOiI1ZjJkNzYxMWQ5NWQ5ZDI5YzRlNmM2MWIiLCJpYXQiOjE1OTY4NDgzOTV9.LMXIJIHRLbBBxumuYT8xuwzNuYRcv0X_GcdnvosAP7w
+Content-Type: application/json
+
+### update contract
+PUT http://localhost:3000/api/contact/5f2dfd66531f5806f88be396
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtzLmNob2lAYWxjaGVyYWluYy5jb20iLCJ1c2VybmFtZSI6ImtzLmNob2kiLCJfaWQiOiI1ZjJkNzYxMWQ5NWQ5ZDI5YzRlNmM2MWIiLCJpYXQiOjE1OTY4NDgzOTV9.LMXIJIHRLbBBxumuYT8xuwzNuYRcv0X_GcdnvosAP7w
+Content-Type: application/json
+
+{
+  "lastName":"test update2"
+}
+
+### delete contract
+DELETE http://localhost:3000/api/contact/5f2dfdfc4daa092840fe5f6a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtzLmNob2lAYWxjaGVyYWluYy5jb20iLCJ1c2VybmFtZSI6ImtzLmNob2kiLCJfaWQiOiI1ZjJkNzYxMWQ5NWQ5ZDI5YzRlNmM2MWIiLCJpYXQiOjE1OTY4NDgzOTV9.LMXIJIHRLbBBxumuYT8xuwzNuYRcv0X_GcdnvosAP7w
+Content-Type: application/json

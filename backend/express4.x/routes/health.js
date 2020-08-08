@@ -1,4 +1,3 @@
-// const logger = require('winston').loggers.get('default')
 const router = require('express').Router()
 
 router.get('/', function (req, res, next) {
